@@ -62,7 +62,7 @@ class WebScraper:
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
             }
             
-            response = requests.get(url, headers=headers, timeout=10)
+            response = requests.get(url, headers=headers, timeout=30, verify=False)
             response.raise_for_status()
             
             self.visited_urls.add(url)
@@ -192,4 +192,5 @@ def main():
     st.markdown("💡 **İpucu:** Büyük siteler için tarama uzun sürebilir. Sabırlı olun!")
 
 if __name__ == "__main__":
+
     main()
